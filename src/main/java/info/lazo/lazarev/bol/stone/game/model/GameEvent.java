@@ -15,6 +15,9 @@ public class GameEvent {
     private int winnerPoints;
     private String loser;
     private int loserPoints;
+    private String message;
+    private String newUser;
+    private String initiator;
 
     boolean isMoveAgain() {
         return GameEventType.MOVE_AGAIN.equals(eventType);
@@ -24,11 +27,11 @@ public class GameEvent {
         this.setPlayer(player.getName());
     }
 
-    private void setEventType(GameEventType eventType) {
+    public void setEventType(GameEventType eventType) {
         this.eventType = eventType;
     }
 
-    private void setPitPosition(int pitPosition) {
+    public void setPitPosition(int pitPosition) {
         this.pitPosition = pitPosition;
     }
 
@@ -126,8 +129,53 @@ public class GameEvent {
         return loserPoints;
     }
 
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setNewUser(String newUser) {
+        this.newUser = newUser;
+    }
+
+    public String getNewUser() {
+        return newUser;
+    }
+
+    /**
+     * @return the initiator
+     */
+    public String getInitiator() {
+        return initiator;
+    }
+
+    /**
+     * @param initiator the initiator to set
+     */
+    public void setInitiator(String initiator) {
+        this.initiator = initiator;
+    }
+
     public static enum GameEventType {
-        START, TRANSFER, CAPTURE, GAME_OVER, MOVE_AGAIN;
+        REGISTER,
+        REGISTERED,
+        REGISTRATION_ACCEPTED,
+        REGISTRATION_REJECTED,
+        USER_REGISTERED,
+        USER_UNREGISTERED,
+        INVITE,
+        IVNITE_ACCEPT,
+        INVITE_REJECT,
+        USER_LEFT,
+        START,
+        MOVE,
+        TRANSFER,
+        CAPTURE,
+        GAME_OVER,
+        MOVE_AGAIN;
 
     }
 

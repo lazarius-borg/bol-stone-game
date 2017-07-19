@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Start Page</title>
+        <title>(Rolling) Stones</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="stone_game.js" type="text/javascript"></script>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Hello Stones!</h1>
+        <div id="player"></div>
+        <input type="text" id="playerName">
+        <input type="button" value="Register" onclick="register(document.getElementById('playerName').value)">
+        <div>
+            <ul id="players"></ul>
+        </div>
+        <div id="messagesConsole"></div>
     </body>
 </html>
